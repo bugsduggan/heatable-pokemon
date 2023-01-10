@@ -1,5 +1,5 @@
-import { schema, rules, CustomMessages } from '@ioc:Adonis/Core/Validator'
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { schema, rules, CustomMessages } from '@ioc:Adonis/Core/Validator';
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 
 export default class PokemonCreateValidator {
   constructor(protected ctx: HttpContextContract) {}
@@ -24,14 +24,12 @@ export default class PokemonCreateValidator {
    *    ```
    */
   public schema = schema.create({
-    pokedexNumber: schema.number([
-      rules.unique({ table: 'pokemon', column: 'pokedex_number' }),
-    ]),
+    pokedexNumber: schema.number([rules.unique({ table: 'pokemon', column: 'pokedex_number' })]),
     name: schema.string({}, [
       rules.unique({ table: 'pokemon', column: 'name', caseInsensitive: true }),
     ]),
     description: schema.string.optional(),
-  })
+  });
 
   /**
    * Custom messages for validation failures. You can make use of dot notation `(.)`
@@ -44,5 +42,5 @@ export default class PokemonCreateValidator {
    * }
    *
    */
-  public messages: CustomMessages = {}
+  public messages: CustomMessages = {};
 }

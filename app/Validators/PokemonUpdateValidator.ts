@@ -1,5 +1,5 @@
-import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator'
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator';
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext';
 
 export default class PokemonUpdateValidator {
   constructor(protected ctx: HttpContextContract) {}
@@ -27,7 +27,7 @@ export default class PokemonUpdateValidator {
     pokedexNumber: schema.number(),
     name: schema.string(),
     description: schema.string.optional(),
-  })
+  });
 
   /**
    * Custom messages for validation failures. You can make use of dot notation `(.)`
@@ -40,5 +40,5 @@ export default class PokemonUpdateValidator {
    * }
    *
    */
-  public messages: CustomMessages = {}
+  public messages: CustomMessages = {};
 }
