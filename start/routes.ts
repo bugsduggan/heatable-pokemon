@@ -20,6 +20,8 @@
 
 import Route from '@ioc:Adonis/Core/Route';
 
-Route.get('/', async () => {
-  return { hello: 'world' };
-});
+Route.get('/', 'PokemonController.show');
+Route.get('/:id', 'PokemonController.show');
+Route.post('/', 'PokemonController.create');
+Route.put('/:id', 'PokemonController.update');
+Route.delete('/:id', 'PokemonController.remove');
